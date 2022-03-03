@@ -1,8 +1,8 @@
 
 import './App.css';
 function App() {
-  const oprSys=['Android','blackberry','iphone','Windows Phone'];
-  const MobileCompany=['Samsung','HTC','Micromax','Apple'];
+  const oprSys=['Android','blackberry','iphone','Windows Phone',"ios"];
+  const MobileCompany=['Samsung','HTC','Micromax','Apple',"nokia"];
  return (
      <div>
       <h1>Mobile Operating System</h1>
